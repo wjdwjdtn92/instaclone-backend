@@ -6,7 +6,7 @@ Instaclone Backend.
 
 -   [x] create account
 -   [x] see profile
--   [ ] edit profile
+-   [x] edit profile
 -   [ ] follow user
 -   [ ] unfollow user
 -   [ ] change avtar (image upload)
