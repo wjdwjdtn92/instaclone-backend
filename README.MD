@@ -10,3 +10,4 @@ Instaclone Backend.
 -   [ ] follow user
 -   [ ] unfollow user
 -   [ ] change avtar (image upload)
+-   [x] login
