@@ -22,7 +22,7 @@ export default {
             const token = await jwt.sign(
                 {
                     id: user.id,
-                    exp: Math.floor(Date.now() / 1000) + 60 * 60,
+                    // exp: Math.floor(Date.now() / 1000) + 60 * 60,
                 },
                 process.env.SECRET_KEY
             );
