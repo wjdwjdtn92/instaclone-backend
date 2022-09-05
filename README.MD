@@ -5,7 +5,7 @@ Instaclone Backend.
 ## User:
 
 -   [x] create account
--   [ ] see profile
+-   [x] see profile
 -   [ ] edit profile
 -   [ ] follow user
 -   [ ] unfollow user
