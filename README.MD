@@ -9,5 +9,5 @@ Instaclone Backend.
 -   [x] edit profile
 -   [ ] follow user
 -   [ ] unfollow user
--   [ ] change avtar (image upload)
+-   [x] change avatar (image upload)
 -   [x] login
