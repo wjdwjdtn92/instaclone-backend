@@ -4,7 +4,15 @@ import { protectRosolver } from "../users.utils";
 
 const resolverFn = async (
     _,
-    { firstName, lastName, username, email, password: newPasswords },
+    {
+        firstName,
+        lastName,
+        username,
+        email,
+        password: newPasswords,
+        bio,
+        avatar,
+    },
     { loggedInUser }
 ) => {
     let hashPassword = null;
