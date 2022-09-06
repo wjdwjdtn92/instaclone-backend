@@ -11,4 +11,5 @@ Instaclone Backend.
 -   [x] unfollow user
 -   [x] change avatar (image upload)
 -   [x] login
--   [x] see follower / pagenation
+-   [x] see followers / pagenation
+-   [x] see following / pagenation
