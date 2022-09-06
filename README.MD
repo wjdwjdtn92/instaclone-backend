@@ -13,3 +13,4 @@ Instaclone Backend.
 -   [x] login
 -   [x] see followers / pagenation
 -   [x] see following / pagenation
+-   [x] search user
