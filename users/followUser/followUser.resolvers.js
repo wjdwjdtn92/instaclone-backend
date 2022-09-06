@@ -2,8 +2,8 @@ import client from "../../client";
 import { protectRosolver } from "../users.utils";
 
 const resolverFn = async (_, { username }, { loggedInUser }) => {
-    const followUser = await client.user.findUnique({ where: { username } });
-    if (!followUser) {
+    const ok = await client.user.findUnique({ where: { username } });
+    if (!ok) {
         return {
             ok: false,
             error: "That user does not exist.",
