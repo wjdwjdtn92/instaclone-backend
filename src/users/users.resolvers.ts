@@ -1,6 +1,7 @@
 import client from "../client";
+import { Resolvers } from "../types";
 
-export default {
+const resolvers: Resolvers = {
     User: {
         totalFollowers: ({ id }) => {
             return client.user.count({
@@ -9,9 +10,9 @@ export default {
                         some: { id },
                     },
                 },
-            });
+            })
         },
-        totalFollowing: ({ id }) => {
+        totalFollowing: ({ id }, _, { loggedInUser }) => {
             return client.user.count({
                 where: {
                     following: {
@@ -44,3 +45,5 @@ export default {
         },
     },
 };
+
+export default resolvers;

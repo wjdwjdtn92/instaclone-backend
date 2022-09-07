@@ -1,7 +1,11 @@
-import client from "../../client";
+import { Resolver, Resolvers } from "../../types";
 import { protectRosolver } from "../users.utils";
 
-const resolverFn = async (_, { username }, { loggedInUser }) => {
+const resolverFn: Resolver = async (
+    _,
+    { username }, { loggedInUser, client },
+) => {
+    console.log("여기")
     const ok = await client.user.findUnique({ where: { username } });
     if (!ok) {
         return {
@@ -26,8 +30,10 @@ const resolverFn = async (_, { username }, { loggedInUser }) => {
     };
 };
 
-export default {
+const resolvers: Resolvers = {
     Mutation: {
         followUser: protectRosolver(resolverFn),
     },
 };
+
+export default resolvers;

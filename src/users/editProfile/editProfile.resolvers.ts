@@ -1,10 +1,10 @@
 import { createWriteStream } from "fs";
-import client from "../../client";
 import bcrypt from "bcrypt";
 import { protectRosolver } from "../users.utils";
 import { GraphQLUpload } from "graphql-upload";
+import { Resolver, Resolvers } from "../../types";
 
-const resolverFn = async (
+const resolverFn: Resolver = async (
     _,
     {
         firstName,
@@ -15,10 +15,10 @@ const resolverFn = async (
         bio,
         avatar,
     },
-    { loggedInUser }
+    { loggedInUser, client }
 ) => {
     // 파일저장
-    let avatarUrl = null;
+    let avatarUrl: string | null = null;
     if (avatar) {
         const { filename, createReadStream } = await avatar;
         const storeFileName = `${loggedInUser.id}-${Date.now()}-${filename}`;
@@ -30,7 +30,7 @@ const resolverFn = async (
         avatarUrl = `http://localhost4000/static/${storeFileName}`;
     }
 
-    let hashPassword = null;
+    let hashPassword: string | null = null;
     if (newPasswords) {
         hashPassword = await bcrypt.hash(newPasswords, 10);
     }
@@ -62,10 +62,15 @@ const resolverFn = async (
     }
 };
 
-export default {
+const resolvers: Resolvers = {
     Upload: GraphQLUpload,
 
     Mutation: {
         editProfile: protectRosolver(resolverFn),
-    },
+    }
 };
+
+
+export default resolvers
+
+

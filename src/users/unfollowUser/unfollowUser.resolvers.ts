@@ -1,9 +1,10 @@
 import client from "../../client";
+import { Resolver, Resolvers } from "../../types";
 import { protectRosolver } from "../users.utils";
 
-const resolverFn = async (_, { username }, { loggedInUser }) => {
-    const followUser = await client.user.findUnique({ where: { username } });
-    if (!followUser) {
+const resolverFn: Resolver = async (_, { username }, { loggedInUser }) => {
+    const ok = await client.user.findUnique({ where: { username } });
+    if (!ok) {
         return {
             ok: false,
             error: "Can`t unfollow user",
@@ -25,8 +26,11 @@ const resolverFn = async (_, { username }, { loggedInUser }) => {
     };
 };
 
-export default {
+
+const resolvers: Resolvers = {
     Mutation: {
         unfollowUser: protectRosolver(resolverFn),
     },
 };
+
+export default resolvers;
