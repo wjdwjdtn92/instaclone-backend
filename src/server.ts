@@ -17,7 +17,6 @@ const startServer = async () => {
         typeDefs,
         resolvers,
         context: async ({ req }) => {
-            console.log("sssssss:", await getUser(req.headers.token))
             return {
                 loggedInUser: await getUser(req.headers.token),
                 client,

@@ -3,7 +3,7 @@
         "outDir": "./built",
         "sourceMap": true,
         "strict": true,
-        "noImplicitAny": false, //any오류 끄기
+        // "noImplicitAny": false, //any오류 끄기
         "lib": ["esnext"],
         "allowJs": true,
         "target": "es5",

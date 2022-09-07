@@ -12,7 +12,6 @@ export const getUser = async (token: string | string[] | undefined) => {
 
         if ("id" in verifyToken) {
             const user = await client.user.findUnique({ where: { id: verifyToken["id"] } });
-            console.log(user)
             if (user) {
                 return user;
             }
