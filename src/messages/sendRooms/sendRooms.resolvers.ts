@@ -1,4 +1,6 @@
 import { Room } from '@prisma/client';
+import { NEW_MESSAGE } from '../../../constant';
+import pubsub from '../../../pubsub';
 import { Resolver, Resolvers } from '../../types';
 import { protectRosolver } from '../../users/users.utils';
 
@@ -64,7 +66,7 @@ const resolverFn: Resolver = async (
         }
     }
 
-    const newMessage = await client.message.create({
+    const message = await client.message.create({
         data: {
             payload,
             room: {
@@ -79,6 +81,8 @@ const resolverFn: Resolver = async (
             }
         }
     })
+    pubsub.publish(NEW_MESSAGE, { roomUpdates: { ...message } });
+
     return {
         ok: true,
     }

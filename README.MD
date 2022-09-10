@@ -22,3 +22,4 @@ Instaclone Backend.
 -   [x] Send message
 -   [x] Computed Field
 -   [x] Read Mesage
+-   [x] Realtime Message

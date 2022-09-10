@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import client from "../client";
 import { Context, Resolver } from "../types";
 
-export const getUser = async (token: string | string[] | undefined) => {
+export const getUser = async (token: string | string[] | undefined | {}) => {
     try {
         if (!token) {
             return null;
