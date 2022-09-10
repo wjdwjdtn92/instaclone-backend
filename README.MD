@@ -18,3 +18,7 @@ Instaclone Backend.
 # DM
 
 -   [x] See Rooms
+-   [x] See Room
+-   [x] Send message
+-   [x] Computed Field
+-   [x] Read Mesage

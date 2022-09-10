@@ -4,5 +4,4 @@ export default gql`
     type Query {
         seeRoom(id: Int!): Room
     }
-
 `;
