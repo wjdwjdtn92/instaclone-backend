@@ -14,3 +14,7 @@ Instaclone Backend.
 -   [x] see followers / pagenation
 -   [x] see following / pagenation
 -   [x] search user
+
+# DM
+
+-   [x] See Rooms
