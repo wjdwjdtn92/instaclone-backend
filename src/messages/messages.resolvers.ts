@@ -3,13 +3,13 @@ import client from "../client";
 
 const resolvers: Resolvers = {
     Room: {
-        user: ({ id }) =>
+        users: ({ id }) =>
             client.room.findUnique({
                 where: {
                     id
                 }
             }).users(),
-        message: ({ id }) =>
+        messages: ({ id }) =>
             client.message.findMany({
                 where: {
                     roomId: id
