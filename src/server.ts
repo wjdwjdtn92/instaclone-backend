@@ -34,7 +34,6 @@ const startServer = async () => {
                 return { loggedInUser: null };
             }
             const loggedInUser = await getUser(ctx.connectionParams?.token);
-            console.log(loggedInUser)
             return {
                 loggedInUser: loggedInUser
             };
@@ -83,6 +82,7 @@ const startServer = async () => {
 
     await server.start();
     app.use(graphqlUploadExpress(), logger("tiny"));
+    app.use("/static", express.static("uploads"));
     server.applyMiddleware({ app });
 
     httpServer.listen({ port: PORT }, () => {

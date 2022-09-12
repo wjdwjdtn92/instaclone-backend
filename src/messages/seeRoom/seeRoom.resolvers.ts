@@ -6,6 +6,19 @@ const resolverFn: Resolver = async (
     { id },
     { loggedInUser, client }
 ) => {
+    const result = await client.room.findFirst({
+        where: {
+            id,
+            users: {
+                some: {
+                    id: loggedInUser.id,
+                }
+            }
+        }
+    })
+
+    console.log(result);
+
     return client.room.findFirst({
         where: {
             id,
@@ -20,7 +33,7 @@ const resolverFn: Resolver = async (
 
 const resolvers: Resolvers = {
     Query: {
-        seeRooms: protectRosolver(resolverFn),
+        seeRoom: protectRosolver(resolverFn),
     }
 };
 

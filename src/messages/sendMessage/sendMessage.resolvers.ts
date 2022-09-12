@@ -11,7 +11,7 @@ const resolverFn: Resolver = async (
 ) => {
     let room: any = null
 
-    if (!userId && !userId) {
+    if (!userId && !roomId) {
         return {
             ok: false,
             error: "userId or roomId is required.",
@@ -90,7 +90,7 @@ const resolverFn: Resolver = async (
 
 const resolvers: Resolvers = {
     Mutation: {
-        sendRooms: protectRosolver(resolverFn),
+        sendMessage: protectRosolver(resolverFn),
     },
 };
 
