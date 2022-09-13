@@ -7,6 +7,7 @@ const resolverFn: Resolver = async (
     { client }
 ) => {
     try {
+        console.log("ssssss")
         const existingUser = await client.user.findFirst({
             where: {
                 OR: [
@@ -36,6 +37,7 @@ const resolverFn: Resolver = async (
             ok: true,
         };
     } catch (e) {
+        console.log(e);
         return {
             ok: false,
             error: "can`t create account.",

@@ -27,7 +27,7 @@ const resolverFn: Resolver = async (
             process.cwd() + "/uploads/" + storeFileName
         );
         readStream.pipe(wirteStream);
-        avatarUrl = `http://localhost4000/static/${storeFileName}`;
+        avatarUrl = `http://localhost:4000/static/${storeFileName}`;
     }
 
     let hashPassword: string | null = null;

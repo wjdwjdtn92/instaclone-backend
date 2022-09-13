@@ -4,10 +4,10 @@ import { Resolver, Resolvers } from "../../types";
 
 const resolverFn: Resolver = async (
     _,
-    { username, password },
+    { email, password },
     { client }
 ) => {
-    const user = await client.user.findFirst({ where: { username } });
+    const user = await client.user.findFirst({ where: { email } });
     if (!user) {
         return {
             ok: false,
@@ -15,6 +15,8 @@ const resolverFn: Resolver = async (
         };
     }
     const passwordOk = await bcrypt.compare(password, user.password);
+    console.log(password)
+    console.log(user.password)
     if (!passwordOk) {
         return {
             ok: false,

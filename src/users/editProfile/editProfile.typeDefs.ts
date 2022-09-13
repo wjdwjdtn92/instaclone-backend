@@ -14,6 +14,6 @@ export default gql`
             password: String
             bio: String
             avatar: Upload
-        ): EditProfileResult
+        ): EditProfileResult!
     }
 `;

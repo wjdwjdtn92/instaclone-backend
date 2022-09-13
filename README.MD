@@ -14,3 +14,12 @@ Instaclone Backend.
 -   [x] see followers / pagenation
 -   [x] see following / pagenation
 -   [x] search user
+
+# DM
+
+-   [x] See Rooms
+-   [x] See Room
+-   [x] Send message
+-   [x] Computed Field
+-   [x] Read Mesage
+-   [x] Realtime Message
